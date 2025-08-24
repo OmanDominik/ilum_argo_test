@@ -2,7 +2,7 @@ ilum-jupyter:
   enabled: false
 
 gitea:
-  enabled: false
+  enabled: true
 
 postgresql:
   enabled: false
