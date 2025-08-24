@@ -15,7 +15,7 @@ spec:
       targetRevision: 6.5.0
       helm:
         valueFiles:
-        - $values/multiple-source-application/values-prod.yaml
+        - $values/values-prod.yaml
     # Values from Git
     - repoURL: https://github.com/OmanDominik/ilum_argo_test
       targetRevision: HEAD
