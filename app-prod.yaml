@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ilum-prod
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ilum-prod
+    name: ilum
+  sources:
+    # Chart from repo
+    - chart: ilum
+      repoURL: https://charts.ilum.cloud
+      targetRevision: 6.5.0
+      helm:
+        valueFiles:
+        - $values/multiple-source-application/values-prod.yaml
+    # Values from Git
+    - repoURL: https://github.com/OmanDominik/ilum_argo_test
+      targetRevision: HEAD
+      ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

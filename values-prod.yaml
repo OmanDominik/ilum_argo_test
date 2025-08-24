@@ -1,0 +1,11 @@
+ilum-jupyter:
+  enabled: false
+
+gitea:
+  enabled: false
+
+postgresql:
+  enabled: false
+
+postgresExtensions:
+  enabled: false
