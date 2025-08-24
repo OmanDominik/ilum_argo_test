@@ -8,7 +8,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: ilum-prod
-    name: ilum
   sources:
     # Chart from repo
     - chart: ilum
